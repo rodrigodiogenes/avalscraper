@@ -1,0 +1,48 @@
+{
+  "search": {
+    "totalCount": 3,
+    "result": {
+      "listings": [
+        {
+          "listing": {
+            "id": "2712345001",
+            "title": "Casa com 4 quartos à venda na Aldeota",
+            "usableAreas": [220],
+            "totalAreas": [300],
+            "bedrooms": [4],
+            "unitTypes": ["HOME"],
+            "pricingInfos": [{"businessType": "SALE", "price": "1350000"}],
+            "address": {"street": "Rua Silva Paulet", "streetNumber": "1500", "neighborhood": "Aldeota",
+                        "city": "Fortaleza", "stateAcronym": "CE"},
+            "advertiserContact": {"phones": ["85999998888"]},
+            "whatsappNumber": "85988887777"
+          },
+          "account": {"name": "Imobiliária Exemplo"},
+          "link": {"href": "/imovel/venda-casa-4-quartos-aldeota-fortaleza-ce-220m2-id-2712345001/"}
+        },
+        {
+          "listing": {
+            "id": "2712345002",
+            "title": "Casa grande",
+            "usableAreas": [350],
+            "pricingInfos": [{"businessType": "SALE", "price": "2500000"}],
+            "address": {"neighborhood": "Aldeota", "city": "Fortaleza", "stateAcronym": "CE"}
+          },
+          "account": {"name": "Corretor Fulano"},
+          "link": {"href": "/imovel/casa-grande-id-2712345002/"}
+        },
+        {
+          "listing": {
+            "id": "2712345003",
+            "title": "Casa no Meireles",
+            "usableAreas": [200],
+            "pricingInfos": [{"businessType": "RENTAL", "price": "8000"}, {"businessType": "SALE", "price": "1100000"}],
+            "address": {"neighborhood": "Meireles", "city": "Fortaleza", "stateAcronym": "CE"}
+          },
+          "account": {"name": "Outra Imob"},
+          "link": {"href": "/imovel/casa-meireles-id-2712345003/"}
+        }
+      ]
+    }
+  }
+}

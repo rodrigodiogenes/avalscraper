@@ -1,0 +1,119 @@
+# Imobiliárias locais de Fortaleza.
+#
+# ATENÇÃO: os modelos de URL abaixo seguem os padrões mais comuns das
+# plataformas de site imobiliário do mercado e NÃO foram validados contra os
+# sites reais (o ambiente de desenvolvimento não tinha acesso de rede a eles).
+# Antes de confiar nos números, rode para cada site:
+#
+#   python -m garimpador recon <url-da-busca-no-site>
+#
+# e ajuste `urls_busca`, `padrao_link` e, se preciso, `seletor_card` /
+# `seletores_detalhe`. Depois marque `validated: true`.
+#
+# Cada entrada aceita vários `urls_busca`: são tentados em ordem e o primeiro
+# que devolver anúncios é usado. Placeholders: {pagina} {transacao} {tipo}
+# {tipo_plural} {cidade} {bairro} {uf} {area_min} {area_max} {preco_min} {preco_max}
+
+- nome: Magno Muniz Imóveis
+  chave: magnomuniz
+  base_url: https://www.magnomuniz.com.br/
+  urls_busca:
+    - /imoveis/{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /imoveis/a-{transacao}/{tipo}/{cidade}?pagina={pagina}
+  padrao_link: '/imove(l|is)/[^?#]*\d{3,}'
+  seletor_contato: 'footer, [class*="contato"], [class*="contact"]'
+  contato_padrao: Magno Muniz Imóveis
+  paginacao: true
+  validated: false
+
+- nome: Fiducial Imobiliária
+  chave: fiducial
+  base_url: https://fiducialimobiliaria.com.br/
+  urls_busca:
+    - /imoveis/{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /imoveis/a-{transacao}/{tipo}/{cidade}?pagina={pagina}
+    - /busca?finalidade={transacao}&tipo={tipo}&cidade={cidade}&bairro={bairro}&pagina={pagina}
+  padrao_link: '/imove(l|is)/[^?#]*\d{3,}'
+  seletor_contato: 'footer, [class*="contato"], [class*="contact"]'
+  contato_padrao: Fiducial Imobiliária
+  paginacao: true
+  validated: false
+
+- nome: Mega Imóveis
+  chave: megaimoveis
+  base_url: https://www.megaimoveis.com/
+  urls_busca:
+    - /imoveis/{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /imoveis/a-{transacao}/{tipo}/{cidade}?pagina={pagina}
+  padrao_link: '/imove(l|is)/[^?#]*\d{3,}'
+  seletor_contato: 'footer, [class*="contato"], [class*="contact"]'
+  contato_padrao: Mega Imóveis
+  paginacao: true
+  validated: false
+
+- nome: César Rêgo Imóveis
+  chave: cesarrego
+  base_url: https://cesarrego.com.br/
+  urls_busca:
+    - /imoveis/{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /imoveis/a-{transacao}/{tipo}/{cidade}?pagina={pagina}
+  padrao_link: '/imove(l|is)/[^?#]*\d{3,}'
+  seletor_contato: 'footer, [class*="contato"], [class*="contact"]'
+  contato_padrao: César Rêgo Imóveis
+  paginacao: true
+  validated: false
+
+- nome: Torres de Melo Neto
+  chave: torresdemeloneto
+  base_url: https://www.torresdemeloneto.com.br/
+  urls_busca:
+    - /imoveis/{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /imoveis/a-{transacao}/{tipo}/{cidade}?pagina={pagina}
+  padrao_link: '/imove(l|is)/[^?#]*\d{3,}'
+  seletor_contato: 'footer, [class*="contato"], [class*="contact"]'
+  contato_padrao: Torres de Melo Neto Imóveis
+  paginacao: true
+  validated: false
+
+- nome: Ciro Paiva Imóveis
+  chave: ciropaiva
+  base_url: https://www.ciropaivaimoveis.com.br/
+  urls_busca:
+    - /imoveis/{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /imoveis/a-{transacao}/{tipo}/{cidade}?pagina={pagina}
+  padrao_link: '/imove(l|is)/[^?#]*\d{3,}'
+  seletor_contato: 'footer, [class*="contato"], [class*="contact"]'
+  contato_padrao: Ciro Paiva Imóveis
+  paginacao: true
+  validated: false
+
+- nome: Alessandro Belchior Imóveis
+  chave: alessandrobelchior
+  base_url: https://www.alessandrobelchior.com.br/
+  urls_busca:
+    - /imoveis/{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /{transacao}/{tipo}/{cidade}/{bairro}?pagina={pagina}
+    - /imoveis/a-{transacao}/{tipo}/{cidade}?pagina={pagina}
+  padrao_link: '/imove(l|is)/[^?#]*\d{3,}'
+  seletor_contato: 'footer, [class*="contato"], [class*="contact"]'
+  contato_padrao: Alessandro Belchior Imóveis
+  paginacao: true
+  validated: false
+
+# Site ASP.NET (SiteSys): a busca e o anúncio são identificados por querystring.
+- nome: SJ Imóveis
+  chave: sj
+  base_url: https://www.sj.com.br/
+  urls_busca:
+    - /SiteSys/site.aspx?pagina={pagina}&finalidade={transacao}&tipo={tipo}&cidade={cidade}&bairro={bairro}
+    - /SiteSys/site.aspx
+  padrao_link: '(?i)(imovel|detalhe|codigo=|cod=|id=)'
+  seletor_contato: 'footer, [id*="contato"], [class*="contato"]'
+  contato_padrao: SJ Imóveis
+  paginacao: false
+  validated: false

@@ -1,0 +1,8 @@
+# pip install -r requirements.txt && python -m playwright install chromium
+playwright>=1.47
+pandas>=2.2
+beautifulsoup4>=4.12
+lxml>=5.2
+pyyaml>=6.0
+pytest>=8.0
+pytest-asyncio>=0.24
